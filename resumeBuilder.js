@@ -1,3 +1,14 @@
+// Hello.
+//
+// This is JSHint, a tool that helps to detect errors and potential
+// problems in your JavaScript code.
+//
+// To start, simply enter some JavaScript anywhere on this page. Your
+// report will appear on the right side.
+//
+// Additionally, you can toggle specific options in the Configure
+// menu.
+
 //var name="ATHUL V NAIR";
 //var role="Front end web developer";
 // var formattedName = HTMLheaderName.replace("%data%",bio.name);
@@ -73,7 +84,7 @@ function displayBio() {
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
     $("#header").append(formattedRole);
 
-    var mySpan = "<span id='mySpan'><ul id='contacts' class='spanU'>  </ul></span></br></br>"
+    var mySpan = "<span id='mySpan'><ul id='contacts' class='spanU'>  </ul></span></br></br>";
     $("#header").append(mySpan);
 
     $("#contacts").append(HTMLcontactGeneric);
@@ -96,15 +107,15 @@ function displayBio() {
         $("#header").append(HTMLskillsStart);
         var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
         $("#skills-h3").append(formattedSkill);
-        var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+         formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
         $("#skills-h3").append(formattedSkill);
-        var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+         formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
         $("#skills-h3").append(formattedSkill);
     }
 }
 
 function displayWork() {
-    for (job in work.jobs) {
+    for (var job in work.jobs) {
         $("#workExperience").append(HTMLworkStart);
         var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
         $(".work-entry:last").append(formattedEmployer);
@@ -121,7 +132,7 @@ function displayWork() {
 
 
 function displayEducation() {
-    for (edu in education.schools) {
+    for (var edu in education.schools) {
         $("#education").append(HTMLschoolStart);
         var schoolName = HTMLschoolName.replace("%data%", education.schools[edu].name);
         $(".education-entry:last").append(schoolName);
@@ -136,14 +147,14 @@ function displayEducation() {
     }
     var newDiv = "<div id='newDiv' class='education-entry'></div>";
 
-    for (edu in education.onlineCourses) {
+    for ( edu in education.onlineCourses) {
         $("#education").append(HTMLonlineClasses);
         $('#education').append(newDiv);
         var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[edu].title);
         $("#newDiv").append(formattedTitle);
         var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[edu].school);
         $("#newDiv").append(formattedSchool);
-        var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[edu].dates);
+         formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[edu].dates);
         $("#newDiv").append(formattedDates);
     }
 
@@ -166,7 +177,7 @@ $(document).click(function(loc) {
 //$("#main").append(internationalizeButton);   
 
 function displayProject() {
-    for (pro in project.projects) {
+    for (var pro in project.projects) {
         $("#projects").append(HTMLprojectStart);
         var formattedTitle = HTMLprojectTitle.replace("%data%", project.projects[pro].title);
         $(".project-entry:last").append(formattedTitle);
@@ -200,6 +211,6 @@ function display() {
 
 var disp = function() {
     display();
-}
+};
 
 disp();
