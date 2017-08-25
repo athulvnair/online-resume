@@ -154,7 +154,7 @@ function displayEducation() {
         $("#newDiv").append(formattedTitle);
         var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[edu].school);
         $("#newDiv").append(formattedSchool);
-         formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[edu].dates);
+        var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[edu].dates);
         $("#newDiv").append(formattedDates);
     }
 
